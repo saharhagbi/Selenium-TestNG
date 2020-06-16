@@ -1,12 +1,10 @@
 package involveMe.pages.home;
 
-import involveMe.BaseDriver;
 import involveMe.pages.BaseDriverPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utilities.constants.Paths;
 
 public class HomePage extends BaseDriverPage {
     public HomePage(WebDriver driver) {

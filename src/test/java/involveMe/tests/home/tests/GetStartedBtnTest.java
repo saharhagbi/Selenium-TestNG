@@ -1,17 +1,13 @@
 package involveMe.tests.home.tests;
 
-import involveMe.pages.home.HomePage;
-import involveMe.tests.BaseDriverTest;
+import involveMe.tests.home.BaseHomeTest;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import utilities.constants.URL;
 import utils.constants.Strings;
 
@@ -19,15 +15,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-public class GetStartedBtnTest extends BaseDriverTest {
-    private HomePage homePage;
-
-    @BeforeMethod
-    private void prepareTest() {
-        homePage = new HomePage(driver);
-        goTo(URL.homePage);
-//        holdPage();
-    }
+public class GetStartedBtnTest extends BaseHomeTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Description("checking if get started button is displayed with the correct string")
@@ -56,7 +44,6 @@ public class GetStartedBtnTest extends BaseDriverTest {
         String mailDecoded = URLEncoder
                 .encode(Strings.SaharMail, StandardCharsets.UTF_8.name());
 
-
         new WebDriverWait(driver, 20)
                 .until(ExpectedConditions.urlToBe(URL.getStartedOnClick + mailDecoded));
 
@@ -64,7 +51,7 @@ public class GetStartedBtnTest extends BaseDriverTest {
     }
 
     private boolean isEmailDisplayedInForm() {
-        //this input field is not the same like the one above, it is after getStarted clic
+        //this input field is not the same like the one above, it is after getStarted click
         return homePage.getAttributeEmailField("value").equals(Strings.SaharMail);
     }
 

@@ -1,16 +1,12 @@
 package involveMe.tests;
 
 import involveMe.BaseDriver;
-import org.testng.ITestContext;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 
-public class BaseDriverTest extends BaseDriver {
-    /*@BeforeMethod
-    protected void beforeEachTest() {
-        holdPage();
-    }*/
+public abstract class BaseDriverTest extends BaseDriver {
+    @BeforeMethod
+    protected abstract void beforeTest();
 
     @AfterTest
     private void handleAfterTest() {

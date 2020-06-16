@@ -2,16 +2,17 @@ package involveMe.tests.home;
 
 import involveMe.pages.home.HomePage;
 import involveMe.tests.BaseDriverTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeMethod;
 import utilities.constants.URL;
 
 public class BaseHomeTest extends BaseDriverTest {
     protected HomePage homePage;
 
-    @BeforeTest
-    private void prepareTest() {
-        homePage = new HomePage(driver);
+    @BeforeMethod
+    @Override
+    protected void beforeTest() {
         goTo(URL.homePage);
-//        holdPage();
+        homePage = new HomePage(driver);
+        holdPage();
     }
 }

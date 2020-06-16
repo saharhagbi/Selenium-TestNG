@@ -3,9 +3,7 @@
 <suite name="Suite1" verbose="1" parallel="true">
     <test name="Regression1">
         <packages>
-            <package name="involveMe.tests.home.tests"/>
-            <package name="involveMe.tests.features"/>
-            <package name="involveMe.tests.integrations"/>
+            <package name="involveMe.tests.*"/>
         </packages>
     </test>
 </suite>
